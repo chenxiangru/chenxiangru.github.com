@@ -1,68 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html><head>
+
     <meta charset="UTF-8">
-    <title></title>
-    <style>
-        * { margin:0; padding:0; }
-        div { overflow:hidden; width:967px; margin:10px auto; }
-        ul { float:left; width:300px; border:1px solid red; margin:10px; }
-        li { list-style:none; margin:10px 0; background:#ccc; font-size:50px; text-align:center; }
-    </style>
-    <script rel="script" type="text/javascript">
-        window.onload= function () {
-          var aImp=document.getElementsByTagName('ul');
-            var aUl=[];
-            for (var i = 0; i < aImp.length; i++) {
-                aUl.push(aImp[i]);
-            }
-            var aColor=['red','blue','yellow'];
-            function getColor(){
-                var r=rnd(0,256);
-                var g=rnd(0,256);
-                var b=rnd(0,256);
-                return r+','+g+','+b;
-            }
-            var now=0;
-            //创建
-            createLi();
-            now++;
-            window.onscroll= function () {
-                var scrollTop=document.body.scrollTop;
-                var clientHeight=document.documentElement.clientHeight;
-                var h=document.body.offsetHeight;
-                if(h-50<=scrollTop+clientHeight){
-                    createLi();
-                    now++;
-                }
-            };
-            function createLi(){
-                for (var i = 0; i < 10; i++) {
-                   var oLi=document.createElement('li');
 
-                    oLi.style.height=rnd(100,300)+'px';
-                    if(now==aColor.left){
-                        now=0;
-                    }
-                    oLi.style.background='rgb('+getColor()+')';
-                    aUl.sort(function (f1, f2) {
-                        return f1.offsetHeight-f2.offsetHeight;
-                    });
-                    aUl[0].appendChild(oLi);
+    <title>Oh! My darling.</title>
 
-                }
-            }
-            function rnd(n,m){
-                return Math.floor(Math.random()*(m-n)+n);
-            }
-        };
-    </script>
+    <link rel="stylesheet" href="normalize.css">
+
+    <link rel="stylesheet" href="style.css" media="screen" type="text/css">
+
 </head>
-<body>
-<div>
-    <ul></ul>
-    <ul></ul>
-    <ul></ul>
-</div>
-</body>
-</html>
+
+<body class="body--ready">">
+<canvas class="canvas" width="1258" height="205"></canvas>
+<script src="index.js?2015052017"></script>
+
+</body></html>
