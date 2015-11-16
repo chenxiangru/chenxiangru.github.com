@@ -1,0 +1,303 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author">
+<meta name="copyright">
+<title>拉钩首页效果</title>
+<style>
+* { margin:0; padding:0; }
+img { cursor:pointer; }
+body{ background:#639; }
+.box { width: 822px; margin:50px auto; }
+.box div { position:relative; float:left; overflow:hidden; width:117px; height:117px; margin:10px; color:#FFF; font-family:'Microsoft YaHei'; }
+.box div img { width:100%; position:relative; }
+span { position:absolute; top:0; left:-117px; width:100%; height:100%; background:rgba(0,179,138,0.9); cursor:pointer; }
+h2{font-size: 24px;height: 24px;line-height: 24px;margin: 10px 8px 8px 8px;text-align: center;overflow: hidden;}
+em{display: block; width: 100px; height: 5px; background: rgba(255,255,255,0.3); filter: alpha(Opacity=30); margin: 0 6px;}
+p{font-size: 12px; margin: 6px 8px; line-height: 18px;}
+</style>
+<script src="move.js"></script>
+<script>
+window.onload=function (){
+	var oBox=document.getElementById('box');
+	var aDiv=oBox.getElementsByTagName('div');
+	for (var i=0; i<aDiv.length; i++){
+		enter(aDiv[i]);
+		leave(aDiv[i]);
+	}
+	function enter(obj){
+		var oSpan=obj.children[1];
+		var W=obj.offsetWidth;
+		var H=obj.offsetHeight;
+		obj.onmouseenter=function (ev){
+			var oEvent=ev || event;
+			var n=getN(obj, oEvent);
+			switch (n){
+				case 0: // right
+					oSpan.style.left=W+'px';
+					oSpan.style.top=0;
+					break;
+				case 1: // bottom
+					oSpan.style.left=0;
+					oSpan.style.top=H+'px';
+					break;
+				case 2: // left
+					oSpan.style.left=-W+'px';
+					oSpan.style.top=0;
+					break;
+				case 3: // top
+					oSpan.style.left=0;
+					oSpan.style.top=-H+'px';
+					break;
+			}
+			move(oSpan, {top:0, left:0});	
+		};
+	}
+	function leave(obj){
+		var oSpan=obj.children[1];
+		var W=obj.offsetWidth;
+		var H=obj.offsetHeight;
+		obj.onmouseleave=function (ev){
+			var oEvent=ev || event;
+			var n=getN(obj, oEvent);
+			switch (n){
+				case 0:
+					move(oSpan, {left:W, top:0});
+					break;
+				case 1:
+					move(oSpan, {left:0, top:H});
+					break;
+				case 2:
+					move(oSpan, {left:-W, top:0});
+					break;
+				case 3:
+					move(oSpan, {left:0, top:-H});
+					break;
+			}
+		};	
+	}
+	function getN(obj, ev){
+		var x=obj.offsetLeft+obj.offsetWidth/2-ev.clientX;
+		var y=obj.offsetTop+obj.offsetHeight/2-ev.clientY;
+		// 测试
+		var n=Math.round((a2d(Math.atan2(y, x))+180)/90)%4;
+		return n;
+	}
+	function a2d(a){
+		return a*180/Math.PI;
+	}
+};
+</script>
+</head>
+
+<body>
+<div id="box" class="box">
+	<div>
+		<img src="1.jpg" alt="" />
+		<span>
+			<h2>分利宝</h2>
+			<em></em>
+			<p>创新型产业互联网金融平台！</p>
+		</span>
+	</div>
+	<div>
+		<img src="2.gif" alt="" />
+		<span>
+			<h2>人人投</h2>
+			<em></em>
+			<p>人人投投资您身边的店铺</p>
+		</span>
+	</div>
+	<div>
+		<img src="3.jpg" alt="" />
+		<span>
+			<h2>洋葱旅行</h2>
+			<em></em>
+			<p>打造中国最大的境外自助行交易平台</p>
+		</span>
+	</div>
+	<div>
+		<img src="4.png" alt="" />
+		<span>
+			<h2>人人行</h2>
+			<em></em>
+			<p>九鼎控股旗下互联网金融业务板块，靠谱机会就等你来</p>
+		</span>
+	</div>
+	<div>
+		<img src="5.jpg" alt="" />
+		<span>
+			<h2>世康怡生</h2>
+			<em></em>
+			<p>一家移动互联网技术掌上医疗平台开发企业</p>
+		</span>
+	</div>
+	<div>
+		<img src="6.jpg" alt="" />
+		<span>
+			<h2>火柴盒</h2>
+			<em></em>
+			<p>一个百万用户的有趣话题聚集地</p>
+		</span>
+	</div>
+	<div>
+		<img src="1.jpg" alt="" />
+		<span>
+			<h2>分利宝</h2>
+			<em></em>
+			<p>创新型产业互联网金融平台！</p>
+		</span>
+	</div>
+	<div>
+		<img src="2.gif" alt="" />
+		<span>
+			<h2>人人投</h2>
+			<em></em>
+			<p>人人投投资您身边的店铺</p>
+		</span>
+	</div>
+	<div>
+		<img src="3.jpg" alt="" />
+		<span>
+			<h2>洋葱旅行</h2>
+			<em></em>
+			<p>打造中国最大的境外自助行交易平台</p>
+		</span>
+	</div>
+	<div>
+		<img src="4.png" alt="" />
+		<span>
+			<h2>人人行</h2>
+			<em></em>
+			<p>九鼎控股旗下互联网金融业务板块，靠谱机会就等你来</p>
+		</span>
+	</div>
+	<div>
+		<img src="5.jpg" alt="" />
+		<span>
+			<h2>世康怡生</h2>
+			<em></em>
+			<p>一家移动互联网技术掌上医疗平台开发企业</p>
+		</span>
+	</div>
+	<div>
+		<img src="6.jpg" alt="" />
+		<span>
+			<h2>火柴盒</h2>
+			<em></em>
+			<p>一个百万用户的有趣话题聚集地</p>
+		</span>
+	</div>
+	<div>
+		<img src="1.jpg" alt="" />
+		<span>
+			<h2>分利宝</h2>
+			<em></em>
+			<p>创新型产业互联网金融平台！</p>
+		</span>
+	</div>
+	<div>
+		<img src="2.gif" alt="" />
+		<span>
+			<h2>人人投</h2>
+			<em></em>
+			<p>人人投投资您身边的店铺</p>
+		</span>
+	</div>
+	<div>
+		<img src="3.jpg" alt="" />
+		<span>
+			<h2>洋葱旅行</h2>
+			<em></em>
+			<p>打造中国最大的境外自助行交易平台</p>
+		</span>
+	</div>
+	<div>
+		<img src="4.png" alt="" />
+		<span>
+			<h2>人人行</h2>
+			<em></em>
+			<p>九鼎控股旗下互联网金融业务板块，靠谱机会就等你来</p>
+		</span>
+	</div>
+	<div>
+		<img src="5.jpg" alt="" />
+		<span>
+			<h2>世康怡生</h2>
+			<em></em>
+			<p>一家移动互联网技术掌上医疗平台开发企业</p>
+		</span>
+	</div>
+	<div>
+		<img src="6.jpg" alt="" />
+		<span>
+			<h2>火柴盒</h2>
+			<em></em>
+			<p>一个百万用户的有趣话题聚集地</p>
+		</span>
+	</div>
+	<div>
+		<img src="1.jpg" alt="" />
+		<span>
+			<h2>分利宝</h2>
+			<em></em>
+			<p>创新型产业互联网金融平台！</p>
+		</span>
+	</div>
+	<div>
+		<img src="2.gif" alt="" />
+		<span>
+			<h2>人人投</h2>
+			<em></em>
+			<p>人人投投资您身边的店铺</p>
+		</span>
+	</div>
+	<div>
+		<img src="3.jpg" alt="" />
+		<span>
+			<h2>洋葱旅行</h2>
+			<em></em>
+			<p>打造中国最大的境外自助行交易平台</p>
+		</span>
+	</div>
+	<div>
+		<img src="4.png" alt="" />
+		<span>
+			<h2>人人行</h2>
+			<em></em>
+			<p>九鼎控股旗下互联网金融业务板块，靠谱机会就等你来</p>
+		</span>
+	</div>
+	<div>
+		<img src="5.jpg" alt="" />
+		<span>
+			<h2>世康怡生</h2>
+			<em></em>
+			<p>一家移动互联网技术掌上医疗平台开发企业</p>
+		</span>
+	</div>
+	<div>
+		<img src="6.jpg" alt="" />
+		<span>
+			<h2>火柴盒</h2>
+			<em></em>
+			<p>一个百万用户的有趣话题聚集地</p>
+		</span>
+	</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author">
+<meta name="copyright">
+<title>购物放大镜效果</title>
+<style>
+* { margin:0; padding:0; }
+body{ background:#6FC; }
+div { overflow:hidden; position:absolute; top:150px; width:310px; height:310px; }
+#div1 { left:300px; background:url(m1.jpg); }
+#div1 span { position:absolute; top:0; left:0; width:100px; height:100px; background:yellow; opacity:0.3; opacity:0; cursor:move; }
+#div2 { display:none; left:670px; }
+#div2 img { position:absolute; top:0; left:0; }
+</style>
+<script>
+window.onload=function (){
+	var oDiv1=document.getElementById('div1');
+	var oDiv2=document.getElementById('div2');
+	var oSpan=document.getElementById('span1');
+	var oImg=document.getElementById('img1');
+	
+	var nMaxTop=0;
+	var nMaxLeft=0;
+	var nMaxImgLeft=0;
+	var nMaxImgTop=0;
+	
+	
+	oDiv1.onmouseover=function (){
+		oDiv2.style.display='block';
+		oSpan.style.opacity='0.3';
+		
+		nMaxTop=oDiv1.offsetHeight-oSpan.offsetHeight;
+		nMaxLeft=oDiv1.offsetWidth-oSpan.offsetWidth;
+		nMaxImgLeft=oImg.offsetWidth-oDiv2.offsetWidth;
+		nMaxImgTop=oImg.offsetHeight-oDiv2.offsetHeight;
+	};
+	
+	oDiv1.onmouseout=function (){
+		oDiv2.style.display='none';
+		oSpan.style.opacity='0';
+	};
+	
+	
+	oDiv1.onmousemove=function (ev){
+		var oEvent=ev || event;
+		// 页面
+		var x=oEvent.clientX;
+		var y=oEvent.clientY;
+		
+		var left=x-oDiv1.offsetLeft-oSpan.offsetWidth/2;
+		var top=y-oDiv1.offsetTop-oSpan.offsetHeight/2;
+		
+		if (left < 0)
+		{
+			left=0;
+		}
+		else if (left > nMaxLeft)
+		{
+			left=nMaxLeft;
+		}
+	
+		if (top < 0)
+		{
+			top=0;
+		}
+		else if (top > nMaxTop)
+		{
+			top=nMaxTop;
+		}
+		
+		oSpan.style.left=left+'px';
+		oSpan.style.top=top+'px';
+		
+		// 右边图片
+		var nImgLeft=left/nMaxLeft*nMaxImgLeft;
+		var nImgTop=top/nMaxTop*nMaxImgTop;
+		
+		oImg.style.left=-nImgLeft+'px';
+		oImg.style.top=-nImgTop+'px';
+	};
+};
+</script>
+</head>
+
+<body>
+	<div id="div1">
+		<span id="span1"></span>
+	</div>
+	<div id="div2">
+		<img src="b1.jpg" id="img1" />
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

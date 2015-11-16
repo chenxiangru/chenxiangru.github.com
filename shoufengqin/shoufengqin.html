@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author">
+<meta name="copyright">
+<title>手风琴特效</title>
+<style>
+* { margin:0; padding:0; }
+body { background:#b0e0ef; }
+ul { overflow:hidden; position:relative; width:898px; height:411px; border:5px solid #F30; margin:80px auto; border-radius:20px; }
+img { margin-left:-80px; }
+li { position:absolute; top:0; left:0; width:578px; height:411px; padding-left:80px; list-style:none; cursor:pointer; }
+span { position:absolute; top:0; left:0; height:100%; width:80px; font-size:18px; }
+em{ position:absolute; left:0; top:0; width:100%; height:100%; background:#FFF; opacity:0.5; }
+font{ position:absolute; left:0; top:0; color:#fff; font-weight:bold; font-size:40px; text-align:center; line-height:65px; margin-top:100px; }
+</style>
+<script src="move.js"></script>
+<script>
+window.onload=function (){
+	var aLi=document.getElementsByTagName('li');
+	var aSpan=document.getElementsByTagName('span');
+	var W=aLi[0].offsetWidth;
+	var sW=aSpan[0].offsetWidth;
+	
+	for (var i=0; i<aLi.length; i++)
+	{
+		if (i != 0)
+		{
+			aLi[i].style.left=W+(i-1)*sW+'px';
+		}
+	}
+	
+	//
+	for (var i=0; i<aSpan.length; i++)
+	{
+		(function (index){
+			aSpan[i].onmouseover=function (){
+				for (var i=0; i<aLi.length; i++)
+				{
+					if (i <= index)
+					{
+						// aLi[i].style.left=i*sW+'px';
+						move(aLi[i], {left:i*sW});
+					}
+					else
+					{
+						//aLi[i].style.left=W+(i-1)*sW+'px';
+						move(aLi[i], {left:W+(i-1)*sW});
+					}
+				}
+			};
+		})(i);
+	}
+};
+</script>
+</head>
+
+<body>
+	<ul>
+		<li>
+			<span style="background:url(sfq/f1.jpg) no-repeat;"><em></em><font>动漫一</font></span>
+			<img src="sfq/f1.jpg" />
+		</li>
+		<li>
+			<span style="background:url(sfq/f2.jpg) no-repeat;"><em></em><font>动漫二</font></span>
+			<img src="sfq/f2.jpg" />
+		</li>
+		<li>
+			<span style="background:url(sfq/f3.jpg) no-repeat;"><em></em><font>动漫三</font></span>
+			<img src="sfq/f3.jpg" />
+		</li>
+		<li>
+			<span style="background:url(sfq/f4.jpg) no-repeat;"><em></em><font>动漫四</font></span>
+			<img src="sfq/f4.jpg" />
+		</li>
+	</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
