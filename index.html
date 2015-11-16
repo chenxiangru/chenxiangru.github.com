@@ -1,21 +1,157 @@
+<!DOCTYPE html>
 <html>
-
-	<head>
-
-		<meta charset="UTF-8">
-
-		<title>Oh! My darling.</title>
-
-		<link rel="stylesheet" href="normalize.css">
-
-		<link rel="stylesheet" href="style.css" media="screen" type="text/css">
-
-	</head>
-
-	<body class="body--ready">
-		<canvas class="canvas" width="1258" height="205"></canvas>
-		<script src="index.js?2015052017"></script>
-
-	</body>
-
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<title>Mr.chen little website</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+<script src="js/sea.js" data-main="js/init"></script>
+</head>
+<body>
+	<!-- Backgrounds -->
+	<div class="wrap">
+		<!--回到顶部-->
+		<div class="to_top"></div>
+		<!--h5音乐播放器-->
+		<div class="header">
+			<div id="wrapper">
+				<audio preload="auto" controls >
+					<source src="music/David Byrne - Main Title Theme.mp3">
+					<source src="music/David Byrne - Main Title Theme.wav">
+				</audio>
+			</div>
+		</div>
+		<div class="wrap_top">
+			<div class="top">
+				<!-- Shell(固定宽) -->
+				<div class="shell">
+					<!-- Header Nav -->
+					<div class="header_nav">
+						<h1><a href="javascript:;">Mr.Chen<br />Site</a></h1>
+						<div class="navigation">
+							<ul>
+								<li><a href="#skills">专业技能</a></li>
+								<li><a href="#work">页面展示</a></li>
+								<li><a href="#favorite">小作品</a></li>
+								<li><a href="#interest">爱好</a></li>
+								<li><a href="#contact">联系方式</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- Main -->
+					<div class="main">
+						<!-- Welcome -->
+						<div class="post">
+							<h2><span>Welcome to my web site</span></h2>
+							<p class="explain">本站所包含效果：<br />
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>sea.js模块化、图片延迟加载功能、无缝滚动、滚轮封装、分块运动、拖拽效果、jspnp。。。</strong><br />
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由于本站采用html5+css3特性所写，因此可能存在一些低版本浏览器与非主流浏览器中部分效果不能出现。已测试可在FireFox、chrome、safari、IE8以上版本、Opera、遨游、360浏览器 5.3版本以上浏览器中完美浏览。</p>
+						</div>
+						<div class="post clearFix">
+							<div class="post_l fl">
+								<h2 id="skills"><span>my skills</span></h2>
+								<p> •	熟练使用HTML/XHTML、CSS等网页制作技术，熟悉页面架构和布局，能编写符合W3C标准、兼容主流浏览器的代码<br />	
+                                    •	熟练使用JQuery、Bootstrap等主流库<br />
+                                    •	熟悉HTML5、CSS3、javascript语言<br />
+                                    •	能够使用requireJS或seaJS进行模块化开发<br />	
+                                    •	熟练运用Git、SVN版本控制工具	<br />
+                                    •	熟悉Ajax、Jsonp等页面技术，对数据交互能够熟练掌握<br />	
+                                    •	熟悉zeptojs、jQuerymobile	<br />
+                                    •	了解常用JavaScript设计模式和MVC框架<br />	
+                                    •	了解PHP、Node.js<br />
+								</p>
+							</div>
+							<div class="post_r fr">
+								<ul class="pic">
+									<li><img _src="images/nine_1.jpg" /></li>
+									<li><img _src="images/nine_2.jpg" /></li>
+									<li><img _src="images/nine_3.jpg" /></li>
+									<li><img _src="images/nine_4.jpg" /></li>
+									<li><img _src="images/nine_5.jpg" /></li>
+									<li><img _src="images/nine_6.jpg" /></li>
+									<li><img _src="images/nine_7.jpg" /></li>
+									<li><img _src="images/nine_8.jpg" /></li>
+									<li><img _src="images/nine_9.jpg" /></li>
+								</ul>
+								<input type="button" value="点击一下试试吧" id="btn" />
+							</div>
+						</div>
+						<!-- Work -->
+						<div class="post">
+							<h2 id="work"><span>My work</span></h2>
+							<div class="work_ft">
+								<div class="post_work">
+									<ul class="work_box clearFix">
+										<li><a href="mengnalisha/index.html" target="_blank"><img _src="images/work1.png" alt="" /></a></li>
+										<li><a href="tengxun/index.html" target="_blank"><img _src="images/work2.png" alt="" /></a></li>
+										<li><a href="taobao/index.html" target="_blank"><img _src="images/work3.png" alt="" /></a></li>
+										<li><a href="360yingshi/index.html" target="_blank"><img _src="images/work4.png" alt="" /></a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="contact"></div>
+						</div>
+						<!-- Favorite -->
+						<div class="post">
+							<h2 id="favorite"><span>Little practice</span></h2>
+							<div class="post_favorite">
+								<ul id="fav" class="favorite clearFix">
+									<li><a href="baidu/baidu.html" target="_blank" ><img _src="images/baidu.jpg" alt="" /></a></li>
+									<li class="fav_li2"><a href="lagou/lagou.html" target="_blank" ><img _src="images/lagou.png" alt="" /></a></li>
+									<li class="fav_li3"><a href="pingguo/pingguo.html" target="_blank" ><img _src="images/pingguo.jpg" alt="" /></a></li>
+									<li class="fav_li4"><a href="shoufengqin/shoufengqin.html" target="_blank" ><img _src="images/shoufengqin.jpg" alt="" /></a></li>
+									<li class="fav_li5"><a href="fangdajing/fangdajing.html" target="_blank" ><img _src="images/fangdajing.jpg" alt="" /></a></li>
+								</ul>
+								<p id="text" class="text clearFix"></p>
+							</div>
+							<div class="contact"></div>
+						</div>
+						<!-- Interest -->
+						<div class="post">
+							<h2 id="interest"><span>Interest</span></h2>
+							<div class="portfolio">
+								<div class="portfolio_holder">
+									<ul>
+										<li style=" opacity:1;"><a href="javascript:;"><img _src="images/Interest1.jpg" alt="" /><span>哆啦A梦：伴我同行</span></a></li>
+										<li><a href="javascript:;"><img _src="images/Interest2.jpg" alt="" /><span>海绵宝宝</span></a></li>
+										<li><a href="javascript:;"><img _src="images/Interest3.jpg" alt="" /><span>卑鄙的我</span></a></li>
+										<li><a href="javascript:;"><img _src="images/Interest4.jpg" alt="" /><span>功夫熊猫</span></a></li>
+										<li><a href="javascript:;"><img _src="images/Interest5.jpg" alt="" /><span>仙剑奇侠传</span></a></li>
+										<li><a href="javascript:;"><img _src="images/Interest6.jpg" alt="" /><span>星际争霸</span></a></li>
+									</ul>
+								</div>
+								<div class="portfolio_nav">
+									<a href="javascript:;" class="prev">Previous</a>
+									<a href="javascript:;" class="next">Next</a>
+								</div>
+							</div>
+						</div>
+						<!-- Contact -->
+						<div class="post">
+							<h2 id="contact"><span>Contact Me</span></h2>
+							<div class="clearFix">
+								<div class="wisdom"></div>
+								<div class="contact_box">
+									<h3>个人信息/Personal Information</h3>
+									<p class="contact_me">姓名： 陈相茹<br />
+										职位： 前端工程师/javascript工程师<br />
+										电话： 15910389523<br />
+										QQ  ： 291198241<br />
+										邮箱： xiangru_chen@126.com<br />
+										地址：北京市<br />
+										<font>如果您对我感兴趣的话，可以照以上方式联系我哦！</font>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Footer -->
+					<div class="footer">
+						<p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="javascript:;">Mr.Chen</a></p>
+					</div>
+				</div>
+				<div class="figure1"></div>
+			</div>
+		</div>
+	</div>
+</body>
 </html>

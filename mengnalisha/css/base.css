@@ -1,0 +1,22 @@
+@charset "utf-8";
+/*清除默认样式*/
+body,div,p,h1,h2,h3,h4,h5,h6,ul,li,ol,dl,dd,dt,span,strong,i,b,em,img,a{ margin:0; padding:0; border:none; }
+body{ font:14px "Microsoft YaHei"; }
+li{ list-style:none; }
+a{ text-decoration:none; }
+.clearFix:after{ content:''; clear:both; display:block; }
+.clearFix{ zoom:1; }
+img{ display:block; }
+.fl{ float:left; display:inline-block; }
+.fr{ float:right; display:inline-block; }
+
+/*通用样式*/
+.mr15px{ margin-right:15px; }
+.mt23px{ margin-top:23px; }
+.mt35px{ margin-top:-35px; }
+.mr395px{ margin-right:395px; }
+.mr163px{ margin-right:163px; }
+.mt30px{ margin-top:-30px; }
+
+
+

@@ -1,0 +1,40 @@
+@charset "utf-8";
+/*清除默认样式*/
+body,div,p,h1,h2,h3,h4,h5,h6,ul,li,ol,dl,dd,dt,span,strong,i,b,em,img,a{ margin:0; padding:0; border:none; }
+body{ font:12px "Microsoft YaHei"; }
+li{ list-style:none; }
+a{ text-decoration:none; color:#333; }
+.clearFix:after{ content:''; clear:both; display:block; }
+.clearFix{ zoom:1; }
+img{ display:block; }
+.fl{ float:left; display:inline-block; }
+.fr{ float:right; display:inline-block; }
+/*通用样式*/
+.ml18px{ margin-right:18px; }
+.ml20px{ margin-left:20px; }
+.ml25px{ margin-left:25px; }
+.ml100px{ margin-left:100px; }
+.ml113px{ margin-left:113px; }
+.mr2px{ margin-right:2px; }
+.mr18px{ margin-right:18px; }
+.mr20px{ margin-right:20px; }
+.mb2px{ margin-bottom:2px; }
+.mb20px{ margin-bottom:20px; }
+.mt_24px{ margin-top:-24px; }
+.pdl45px{ padding-left:45px; }
+.w130px{ width:130px; }
+.w180px{ width:180px; }
+.w242px{ width:242px; }
+.w380px{ width:380px; }
+.h34px{ height:34px; }
+.h53px{ height:53px; }
+.h100px{ height:100px; }
+.h135px{ height:135px; }
+.h155px{ height:155px; }
+.h254px{ height:254px; }
+.h288px{ height:288px; }
+.h331px{ height:331px; }
+.lh25px{line-height:25px;}
+.pr{ position:relative; }
+
+
